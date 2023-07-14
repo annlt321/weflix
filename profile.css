@@ -1,0 +1,76 @@
+/*loading*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100vh;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+}
+
+.loader--hidden{
+    opacity: 0;
+    visibility: hidden;
+    transition-delay: 2s;
+}
+
+.loader::after {
+    content: url(Media/Logo.svg);
+    width: 50vw;
+    animation: loading 2s ease-out forwards;
+}
+@keyframes loading {
+  0% {
+    opacity: 0;
+		transform: translatey(0px);
+	}
+	100% {
+    opacity: 100;
+		transform: translatey(-40px);
+	}
+}
+
+/*Video Carousel*/
+
+.wrapper{
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+.wrapper .carousel {
+  white-space:nowrap;
+  max-height: 100vh;
+}
+
+.carousel video {
+  z-index: -1;
+  position: static;
+  width: 100vw;
+  height: 100vh;
+  object-fit:cover;
+}
+
+
+
+.content--hidden {
+  font-size: 100vw;
+}
